@@ -29,7 +29,7 @@
 | `food.png` | банкетный стол, новогодний декор |
 | `decor.png` | декор в салоне |
 
-Перегенерация: `python gen_landing.py --all` (или `--only hero`) из корня проекта — если локальный ComfyUI запущен на `127.0.0.1:8188`.
+Перегенерация: `python tools/gen_landing.py --all` (или `--only hero,vessel-mid`) из папки `landing-teplohod` — если локальный ComfyUI запущен на `127.0.0.1:8188`. Сжатие PNG в JPEG и переписывание ссылок: `python tools/optimize_images.py`.
 
 ## Локальный запуск
 
@@ -53,5 +53,8 @@ python -m http.server 8080 --directory .
 index.html
 assets/css/style.css
 assets/js/app.js
-assets/img/*.png
+assets/img/*.jpg
+tools/gen_landing.py      # генерация фото в ComfyUI
+tools/optimize_images.py  # сжатие и замена ссылок
+deploy.ps1                # коммит + пуш + GitHub Pages
 ```
